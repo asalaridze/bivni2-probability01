@@ -29,10 +29,12 @@ ggplot(data=rnd_norm,aes(x=x,y=..density..))+
   geom_histogram(fill="red")+
 #  geom_density()+
   geom_line(data=fun_norm,aes(col="green",x=x,y=val))
-
+# добабление графика функции средсвами ggplot2::stat_func()
 rnd_norm_10_2<- data.frame(x=rnorm(200000,mean = 10,sd=2))
-ggplot(data=rnd_norm_10_2,aes(x=x,y=..density..))+
-  geom_histogram(fill="red")+geom_density()
+ggplot(data=rnd_norm_10_2,aes(x=x))+
+  geom_histogram(fill="red",aes(y=..density..))+
+  stat_function(data=rnd_norm_10_2,fun=dnorm, col="blue",size=2,n=500,
+                args = list(mean=mean(rnd_norm_10_2$x),sd=sd(rnd_norm_10_2$x)))
 
 summary(rnd_norm_10_2)
 mean(rnd_norm_10_2$x)
@@ -44,7 +46,7 @@ var(rnd_norm_10_2$x)
 # биноминальное распределение (binom)
 rnd_binom_20<- data.frame(x=rbinom(200000,size=20,prob=0.5))
 ggplot(data=rnd_binom_20,aes(x=x,y=..density..))+
-  geom_histogram(fill="red")+geom_density()
+  geom_histogram(fill="red",binwidth=0.2)+geom_density()
 
 
 
