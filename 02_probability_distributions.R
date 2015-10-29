@@ -52,4 +52,7 @@ ggplot(data=rnd_binom_20,aes(x=x,y=..density..))+
 
 # распределение Пуассона (pois) The Poisson Distribution
 
+# плотность (density)
+ggplot(data.frame(x=c(0,50)),aes(x)) + stat_function(fun=dpois,args = list(lambda=20),geom="bar") 
+
 
