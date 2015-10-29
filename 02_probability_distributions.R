@@ -55,3 +55,6 @@ ggplot(data=rnd_binom_20,aes(x=x,y=..density..))+
 # график плотности (density)
 ggplot(data.frame(x=c(0,50)),aes(x)) + stat_function(fun=dpois,args = list(lambda=20),geom="bar") 
 
+# экспонециальное распределение
+
+ggplot(data.frame(x=c(-10,70)),aes(x)) + stat_function(fun=dexp,args = list(rate=1/20),geom="line") 
