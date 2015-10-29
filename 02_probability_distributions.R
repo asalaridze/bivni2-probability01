@@ -65,5 +65,7 @@ rnd_exp_samples <- rexp(n = nosim,rate = lambda)
 rnd_pois_samples <- rpois(n = nosim,lambda  = lambda)
 
 mean(rnd_exp_samples)
+sd(rnd_exp_samples)
 mean(rnd_pois_samples)
+sd(rnd_pois_samples)
 mean(rnd_exp_samples) * mean(rnd_pois_samples)
