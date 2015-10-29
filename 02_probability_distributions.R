@@ -58,3 +58,12 @@ ggplot(data.frame(x=c(0,50)),aes(x)) + stat_function(fun=dpois,args = list(lambd
 # экспонециальное распределение
 
 ggplot(data.frame(x=c(-10,70)),aes(x)) + stat_function(fun=dexp,args = list(rate=1/20),geom="line") 
+
+nosim <- 10000
+lambda <- 20
+rnd_exp_samples <- rexp(n = nosim,rate = lambda)
+rnd_pois_samples <- rpois(n = nosim,lambda  = lambda)
+
+mean(rnd_exp_samples)
+mean(rnd_pois_samples)
+mean(rnd_exp_samples) * mean(rnd_pois_samples)
