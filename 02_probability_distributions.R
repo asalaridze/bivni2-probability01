@@ -57,7 +57,7 @@ ggplot(data.frame(x=c(0,50)),aes(x)) + stat_function(fun=dpois,args = list(lambd
 
 # экспонециальное распределение
 
-ggplot(data.frame(x=c(-10,70)),aes(x)) + stat_function(fun=dexp,args = list(rate=1/20),geom="line") 
+ggplot(data.frame(x=c(0,1.4)),aes(x)) + stat_function(fun=dexp,args = list(rate=20),geom="line") 
 
 nosim <- 10000
 lambda <- 20
